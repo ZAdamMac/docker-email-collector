@@ -1,5 +1,9 @@
 Docker Email Collector (DEC)
 ======================
+
+# Usage Note
+This is a personal fork of the original project from [https://github.com/optb/docker-email-collector](https://github.com/optb/docker-email-collector) and may no longer function in quite the same way originally designed. Documenting the fork's behaviour changes is contingent on timing and a low priority for the work itself.
+
 # Features
 
 1. All your emails can be collected from multiple mailboxes via IMAP/POP3 by [fetchmail](https://www.fetchmail.info/)
