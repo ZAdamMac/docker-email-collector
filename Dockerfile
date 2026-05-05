@@ -1,9 +1,9 @@
-FROM dovecot/dovecot:latest
+FROM dovecot/dovecot:latest-dev
 
-LABEL version="1.0.0-beta"
+LABEL version="1.0.1-beta-arclabs"
 LABEL description="Collects all your emails to your own server"
-LABEL org.opencontainers.image.url="https://github.com/optb/docker-email-collector"
-LABEL org.opencontainers.image.authors="https://github.com/optb/"
+
+USER root
 
 RUN apt-get update && apt-get upgrade \
     && apt-get -y install netbase sudo procps \
@@ -19,6 +19,8 @@ ADD ./etc /etc/
 ADD ./dec /dec/
 
 RUN chmod 0550 /dec/docker-entrypoint.sh
+
+USER vmail
 
 ENTRYPOINT ["/sbin/tini","--"]
 
